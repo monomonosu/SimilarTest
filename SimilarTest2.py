@@ -13,12 +13,10 @@ print(hash)
 resourceImages = os.listdir('images')  # imagesディレクトリ内の画像名リスト取得
 resourceImages.remove(originImage)  # オリジナルイメージをリストから外す
 for image in resourceImages:
-    otherhash = imagehash.average_hash(Image.open('images/'+image))
-
-    hashdiff = hash-otherhash
-
-    otherHashDict[image] = hashdiff
+    otherHash = imagehash.average_hash(Image.open('images/'+image))
+    hashdiff = hash-otherHash
+    otherHashDict[image] = hashdiff  # イメージ名とハッシュ差のセットをDictに追加
 
 print(otherHashDict)
 minHashImageName = min(otherHashDict, key=otherHashDict.get)
-print(minHashImageName)
+print(minHashImageName)  # オリジナルイメージと一番近いハッシュ値のイメージ名を出力
