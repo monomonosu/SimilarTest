@@ -1,5 +1,6 @@
 # SimilarTest
 画像類似計算ライブラリのテスト
+ImageHashというライブラリを使用してみる
 
 ## Pythonライブラリ
 - ImageHash
